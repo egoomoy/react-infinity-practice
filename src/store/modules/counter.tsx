@@ -23,11 +23,11 @@ function counter(state: CounterState = initialState, action: CounterAction) {
     case INCREASE:
       return { count: state.count + 1 };
     case DIFFNUMPLUS:
-      console.log(`${1}`);
-
+      /* Since input HTMLElement.value returns a "String".... */
+      const parsediff = Number(action.payload);
       return {
         ...state,
-        count: action.payload + state.count
+        count: parsediff + state.count
       };
     default:
       return state;

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Counter from "../components/Counter";
-import { RootState } from "../store/modules/index";
-import { increase, diffnumplus } from "../store/modules/counter";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import Counter from '../components/Counter';
+import { RootState } from '../store/modules/index';
+import { increase, diffnumplus } from '../store/modules/counter';
+import { useSelector, useDispatch } from 'react-redux';
 
 function CounterContainer() {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -23,13 +23,8 @@ function CounterContainer() {
 
   return (
     <>
+      <Counter value={count} diff={diffNum} onIncrease={onIncrease} onDiffNumPlus={onDiffnumplus} />
       <input type="text" onChange={changeDiffNum} value={diffNum} />
-      <Counter
-        value={count}
-        diff={diffNum}
-        onIncrease={onIncrease}
-        onDiffNumPlus={onDiffnumplus}
-      />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
 type CounterProps = {
   value: number;
@@ -10,10 +10,11 @@ type CounterProps = {
 function Counter({ value, diff, onIncrease, onDiffNumPlus }: CounterProps) {
   return (
     <Fragment>
-      <h1>{value}</h1>
-      <h1>{diff}</h1>
-      <button onClick={onIncrease}>+</button>
-      <button onClick={() => onDiffNumPlus(diff)}>+diff</button>
+      <h1>react-redux</h1>
+      <div>store - container - component</div>
+      <h2>{value}</h2>
+      <button onClick={onIncrease}>+1</button>
+      <button onClick={() => onDiffNumPlus(diff)}>+{diff} jump Number</button>
     </Fragment>
   );
 }

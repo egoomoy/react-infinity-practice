@@ -1,25 +1,24 @@
 import React, { useState, useMemo, Fragment } from 'react';
 
 function HookUseMemo() {
-  type numberList = { value: number };
-  const [mynum, setMynum] = useState<numberList['value']>(0);
-  const [List, setList] = useState<numberList[]>([]);
+  const [mynum, setMynum] = useState<number>(0);
+  const [List, setList] = useState<number[]>([]);
 
   const onChange = (e: any) => {
     setMynum(e.target.value);
   };
 
   const onClickAdd = () => {
-    const temp = [mynum];
-    const nextList = List.concat(temp);
+    const nextList = List.concat([mynum]);
     setList(nextList);
   };
 
-  const getAvg = (numbers: numberList[]) => {
+  const getAvg = (numbers: number[]) => {
     if (numbers.length === 0) return 0;
     else {
-      const sum: number = 0;
-      numbers.map(row => console.log());
+      let sum = 0;
+      numbers.map(row => sum + row);
+      return sum / numbers.length;
     }
   };
   return (
@@ -27,6 +26,11 @@ function HookUseMemo() {
       <h1>UseMemo</h1>
       <input value={mynum} onChange={onChange}></input>
       <button onClick={onClickAdd}>add</button>
+      <ul>
+        {List.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </ul>
     </Fragment>
   );
 }

@@ -5,7 +5,6 @@ function HookUseMemo() {
   const [List, setList] = useState<number[]>([1, 2]);
 
   const onChange = (e: any) => {
-    console.log('test');
     setMynum(e.target.value);
   };
 
@@ -18,21 +17,24 @@ function HookUseMemo() {
     if (numbers.length === 0) return 0;
     else {
       const sum = numbers.reduce((a, b) => a + b);
-      console.log(sum);
-      console.log(numbers.length);
-
       return sum / numbers.length;
     }
   };
 
   const avg = useMemo(() => getAvg(List), [List]);
+
+  console.log('랜더링');
+
   return (
     <Fragment>
       <h1>UseMemo</h1>
+
       <input value={mynum} onChange={onChange}></input>
       <button onClick={onClickAdd}>add</button>
-      <h3>useMemo 적용 전 평균값 계산 : {getAvg(List)}</h3>
-      <h3>useMemo 적용 후 평균값 : {avg}</h3>
+      <h3>useMemo가 적용되지 않는 계산 값은 Input 박스의 값이 변경될 떄도 렌더링이 진행된다</h3>
+      <div>useMemo 적용 전 평균값 계산 : {getAvg(List)}</div>
+      <h3>useMemo가 적용되어 List가 바뀔 때만 렌더링이 진행된다</h3>
+      <div>useMemo 적용 후 평균값 : {avg}</div>
       <h2>Number List</h2>
       <ul>
         {List.map((value, index) => (

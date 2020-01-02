@@ -6,6 +6,9 @@ import Home from '../src/practice/Home';
 import HookUseMemo from '../src/practice/HookUseMemo';
 import HookUseMemoTouseCallback from '../src/practice/HookUseMemoTouseCallback';
 import HooksUseReducer from '../src/practice/HooksUseReducer';
+import HooksRef from '../src/practice/HooksRef';
+import ImmutabilitySimple from './practice/ImmutabilitySimple';
+import ImmutabilityPractice from './practice/ImmutabilityPractice';
 import { Route, Link } from 'react-router-dom';
 
 const App: React.FC = () => {
@@ -18,6 +21,9 @@ const App: React.FC = () => {
         <Route exact path="/HookUseMemo" component={HookUseMemo}></Route>
         <Route exact path="/HookUseMemoTouseCallback" component={HookUseMemoTouseCallback}></Route>
         <Route exact path="/HooksUseReducer" component={HooksUseReducer}></Route>
+        <Route exact path="/HooksRef" component={HooksRef}></Route>
+        <Route exact path="/ImmutabilitySimple" component={ImmutabilitySimple}></Route>
+        <Route exact path="/ImmutabilityPractice" component={ImmutabilityPractice}></Route>
       </div>
       <div className="Mmenu">
         <ul>
@@ -38,6 +44,15 @@ const App: React.FC = () => {
           </li>
           <li>
             <Link to="/HooksUseReducer">HooksUseReducer</Link>
+          </li>
+          <li>
+            <Link to="/HooksRef">HooksRef</Link>
+          </li>
+          <li>
+            <Link to="/ImmutabilitySimple">ImmutabilitySimple</Link>
+          </li>
+          <li>
+            <Link to="/ImmutabilityPractice">ImmutabilityPractice</Link>
           </li>
         </ul>
       </div>

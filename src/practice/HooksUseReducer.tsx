@@ -13,6 +13,7 @@ const reducer = (state: any, action: any) => {
 };
 
 const inputReducer = (state: any, action: any) => {
+  console.log(action);
   return {
     ...state,
     [action.name]: action.value,
@@ -44,7 +45,7 @@ function HooksUseReducer() {
       </div>
       <div style={{ width: '50%', float: 'right' }}>
         <h1>useReducer input</h1>
-        <div>input을 reducer로 useState를 안쓰고 간소화하자.</div>
+        <div>input을 useReducer로 useState를 안쓰고 간소화하자.</div>
         <input name="name" value={name} onChange={onChange} />
         <input name="bio" value={bio} onChange={onChange} />
         <div>이름 : {name}</div>

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, Fragment, useCallback } from 'react';
 
-function HookUseMemo() {
+function HooksUseMemo() {
   const [mynum, setMynum] = useState<number>(0);
   const [List, setList] = useState<number[]>([2]);
 
@@ -53,4 +53,4 @@ function HookUseMemo() {
   );
 }
 
-export default HookUseMemo;
+export default HooksUseMemo;

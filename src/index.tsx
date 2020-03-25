@@ -9,12 +9,24 @@ import { createStore } from 'redux';
 import rootReducer from './store/modules';
 import { BrowserRouter } from 'react-router-dom';
 
+import ApolloClient from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { createHttpLink } from 'apollo-link-http';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+const client = new ApolloClient({
+  link: createHttpLink({ uri: 'http://localhost:4001/graphql', credentials: 'include' }),
+  cache: new InMemoryCache(),
+});
+
 const store = createStore(rootReducer);
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
     </Provider>
   </BrowserRouter>,
 

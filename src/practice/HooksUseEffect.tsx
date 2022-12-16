@@ -37,7 +37,7 @@ function HooksUseEffect() {
       <div>Book State : {book}</div>
 
       <h2>useEffect Test 02, 최초 마운트에서만 실행</h2>
-      <div>Mount State : {mountState} => 최초 마운트에서만 실행(value 0 to 7)</div>
+      <div>Mount State : {mountState} 최초 마운트에서만 실행(value 0 to 7)</div>
     </div>
   );
 }

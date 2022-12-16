@@ -12,6 +12,10 @@ import ImmutabilitySimple from './practice/ImmutabilitySimple';
 import ImmutabilityPractice from './practice/ImmutabilityPractice';
 import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import MyPage from './practice/MyPage';
+import SmartHome from './practice/SmartHome';
+import UseAsyncTest from './practice/UseAsyncTest';
+import Todo from './components/Todo'
+
 import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
@@ -76,9 +80,14 @@ const App: React.FC<RouteComponentProps> = props => {
             <Route exact path="/ImmutabilitySimple" component={ImmutabilitySimple}></Route>
             <Route exact path="/ImmutabilityPractice" component={ImmutabilityPractice}></Route>
             <Route exact path="/HooksCustom" component={HooksCustom}></Route>
-            <Route exact path="/MyPage" component={MyPage}></Route>
+            <Route exact path="/MyPage" component={MyPage}></Route>        
+            <Route exact path="/SmartHome" component={SmartHome}></Route>
+            <Route exact path="/UseAsyncTest" component={UseAsyncTest}></Route>
+            <Route exact path="/Todo" component={Todo}></Route>
             <Route path="*" component={HooksUseMemo} />
             <Route path="/error" component={HooksUseMemo} />
+
+            
           </Switch>
         </div>
         <div className="Mmenu">
@@ -115,6 +124,15 @@ const App: React.FC<RouteComponentProps> = props => {
             </li>
             <li>
               <Link to="/HooksCustom">HooksCustom</Link>
+            </li>
+            <li>
+              <Link to="/SmartHome">SmartHome</Link>
+            </li>
+            <li>
+              <Link to="/UseAsyncTest">UseAsyncTest</Link>
+            </li>
+            <li>
+              <Link to="/Todo">Todo</Link>
             </li>
           </ul>
         </div>
